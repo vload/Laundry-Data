@@ -32,7 +32,10 @@ def create_figure(data, name: str):
     ax.plot(list(range(24)), get_hourly_mean(data, weekends), label='weekend')
 
     ax.legend()
-    fig.savefig(name + '.png', dpi=157.35)
+    fig.show()
+    
+##      Uncomment the following line to save the graphs 
+    # fig.savefig(name + '.png', dpi=157.35)
 
 
 if __name__ == '__main__':
@@ -65,5 +68,6 @@ if __name__ == '__main__':
             washer_data[r['weekday']][hour][minute].append(int(r['washers']))
             dryer_data[r['weekday']][hour][minute].append(int(r['dryers']))
 
-    create_figure(washer_data, 'wahsers')
+    create_figure(washer_data, 'washers')
     create_figure(dryer_data, 'dryers')
+    plt.show()
