@@ -5,11 +5,6 @@ from statistics import mean
 import matplotlib.pyplot as plt
 
 
-def sort_by_key(d: dict):
-    return {key: value for key, value in sorted(
-        d.items(), key=itemgetter(0))}
-
-
 def get_hourly_mean(data, days: list):
     hourly_mean = [[] for h in range(24)]
 
